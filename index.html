@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Buildstorm 2D</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Top-Down Battle Royale</p>
+          <h1>Buildstorm 2D</h1>
+          <p class="deck">
+            Drop in, grab loot, build cover, and survive the shrinking storm.
+          </p>
+        </div>
+        <div class="meta-panels">
+          <div class="panel stat-panel">
+            <span class="label">Weapon</span>
+            <strong id="weaponName">Ranger Rifle</strong>
+            <span class="subtle" id="weaponRarity">Common</span>
+          </div>
+          <div class="panel stat-panel">
+            <span class="label">Ammo</span>
+            <strong id="ammoText">24 / 96</strong>
+            <span class="subtle" id="reloadText">Ready</span>
+          </div>
+          <div class="panel stat-panel">
+            <span class="label">Materials</span>
+            <strong id="materialsText">30</strong>
+            <span class="subtle">10 per wall</span>
+          </div>
+          <div class="panel stat-panel">
+            <span class="label">Alive</span>
+            <strong id="aliveText">12</strong>
+            <span class="subtle" id="stormText">Storm forming</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="game-layout">
+        <div class="sidebar">
+          <article class="panel meter-panel">
+            <div class="meter-copy">
+              <span class="label">Health</span>
+              <strong id="healthValue">100</strong>
+            </div>
+            <div class="meter-track">
+              <div class="meter-fill health" id="healthFill"></div>
+            </div>
+          </article>
+
+          <article class="panel meter-panel">
+            <div class="meter-copy">
+              <span class="label">Shield</span>
+              <strong id="shieldValue">50</strong>
+            </div>
+            <div class="meter-track">
+              <div class="meter-fill shield" id="shieldFill"></div>
+            </div>
+          </article>
+
+          <article class="panel meter-panel">
+            <div class="meter-copy">
+              <span class="label">Sprint</span>
+              <strong id="staminaValue">100</strong>
+            </div>
+            <div class="meter-track">
+              <div class="meter-fill energy" id="staminaFill"></div>
+            </div>
+          </article>
+
+          <article class="panel controls-panel">
+            <h2>Controls</h2>
+            <ul>
+              <li><span>Move</span><strong>W A S D</strong></li>
+              <li><span>Sprint</span><strong>Shift</strong></li>
+              <li><span>Aim</span><strong>Mouse</strong></li>
+              <li><span>Fire</span><strong>Left Click</strong></li>
+              <li><span>Reload</span><strong>R</strong></li>
+              <li><span>Build Wall</span><strong>F</strong></li>
+              <li><span>Restart</span><strong>Enter / R</strong></li>
+            </ul>
+          </article>
+
+          <article class="panel feed-panel">
+            <h2>Match Feed</h2>
+            <div id="feed"></div>
+          </article>
+        </div>
+
+        <div class="arena-frame">
+          <canvas id="game" aria-label="Buildstorm 2D game canvas"></canvas>
+          <div id="overlay" class="overlay">
+            <div class="overlay-card">
+              <p class="eyebrow">Last One Standing</p>
+              <h2 id="overlayTitle">Press Enter To Drop</h2>
+              <p id="overlayBody">
+                Use walls to break sightlines, loot the glowing crates, and stay
+                inside the storm circle.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./game.js"></script>
+  </body>
+  </html>
